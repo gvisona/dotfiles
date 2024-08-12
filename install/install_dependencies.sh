@@ -7,7 +7,7 @@
 # On Linux?
 # curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraMono.tar.xz
 if [ -d "$HOME/Library/Fonts" ]; then
-  if [ ! -d "$HOME/Library/FontsFiraMonoNerdFont-Regular.otf"]; then
+  if [ ! -d "$HOME/Library/FontsFiraMonoNerdFont-Regular.otf" ]; then
     curl -s -L  https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraMono.tar.xz | tar xvz - -C $HOME/Library/Fonts
   fi
 fi
@@ -39,7 +39,7 @@ fi
  
 
  # Tmux plugin manager
-if [ -d "$HOME/.tmux/plugins/tpm" ]; then
+if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
  
