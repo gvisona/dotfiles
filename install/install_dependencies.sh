@@ -37,3 +37,9 @@ if [ ! -d "$HOME/.vim/colors/selenized.vim" ]; then
   cp ./vim/selenized.vim $HOME/.vim/colors
 fi
  
+
+ # Tmux plugin manager
+if [ -d "$HOME/.tmux/plugins/tpm" ]; then
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
+ 
