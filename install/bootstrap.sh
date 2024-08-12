@@ -4,6 +4,8 @@
 
 cd "$(dirname "$0")/.."
 DOTFILES=$(pwd -P)
+echo "Dotfiles dir: $DOTFILES"
+
 
 set -e
 

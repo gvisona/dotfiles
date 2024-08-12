@@ -3,7 +3,7 @@ syntax on
 set termguicolors
 set background=dark
 set term=xterm-256color
-colorscheme solarized
+colorscheme selenized
 set noerrorbells
 set tabstop=4 softtabstop=4
 set shiftwidth=4
@@ -35,13 +35,14 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 
 call plug#begin('~/.vim/plugged')
 
-"Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
 Plug 'frazrepo/vim-rainbow'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree'
-Plug 'scrooloose/syntastic'
-"Plug 'itchyny/lightline.vim'
+Plug 'dense-analysis/ale'
 
 
 call plug#end()
+
+nnoremap <C-f> :Files<Cr>
+nnoremap <C-g> :NERDTreeToggle<Cr>
