@@ -18,7 +18,8 @@ source_if_exists $DOTFILES/zsh/aliases.zsh
 source_if_exists /usr/local/etc/profile.d/z.sh
 source_if_exists /opt/homebrew/etc/profile.d/z.sh
 
-
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
 
 
 #### PLUGINS
