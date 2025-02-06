@@ -136,11 +136,24 @@ install_dotfiles () {
   done
 }
 
+
+
+if [ ! -d "$HOME/Software" ]; then
+    # Directory does not exist, so create it
+    mkdir "$HOME/Software"
+    echo "Directory $HOME/Software created."
+else
+    echo "Directory $HOME/Software already exists."
+fi
+
+
+
 create_env_file () {
     if test -f "$HOME/.env.sh"; then
         success "$HOME/.env.sh file already exists, skipping"
     else
         echo "export DOTFILES=$DOTFILES" > $HOME/.env.sh
+        echo "export SOFTWARE_FOLDER=$HOME/Software" > $HOME/.env.sh
         success 'created ~/.env.sh'
     fi
 }

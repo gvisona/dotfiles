@@ -14,7 +14,7 @@ source_if_exists () {
 source_if_exists $HOME/.env.sh
 source_if_exists $DOTFILES/zsh/history.zsh
 source_if_exists $DOTFILES/zsh/git.zsh
-source_if_exists $DOTFILES/zsh/aliases.zsh
+source_if_exists $DOTFILES In general it works great on Linux and pretty much every package is available on both macOS and Linux, but none of the casks are available on Linux./zsh/aliases.zsh
 source_if_exists /usr/local/etc/profile.d/z.sh
 source_if_exists /opt/homebrew/etc/profile.d/z.sh
 
@@ -36,7 +36,7 @@ fi
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
-zinit ice depth=1; zinit light romkatv/powerlevel10k
+zinit ice depth=1
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light Aloxaf/fzf-tab
@@ -53,14 +53,9 @@ autoload -Uz compinit && compinit
 #bindkey '^f' autosuggest-accept
 
 
-
-
 # if type "direnv" > /dev/null; then
 #     eval "$(direnv hook zsh)"
 # fi
-
-# source_if_exists ~/.fzf.zsh
-
 
 
 #autoload -U zmv
@@ -77,9 +72,10 @@ precmd() {
     source $DOTFILES/zsh/aliases.zsh
 }
 
-source <(fzf --zsh)
+# Source fzf
+source_if_exists ~/.fzf.zsh
+#source <(fzf --zsh)
 
-#eval "$(starship init zsh)"
 
 # export VISUAL=vim
 # export EDITOR=vim
@@ -87,3 +83,6 @@ source <(fzf --zsh)
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Created by `pipx` on 2025-02-03 22:15:21
+export PATH="$PATH:/home/gvisona/.local/bin"
