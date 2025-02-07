@@ -1,3 +1,4 @@
 $DOTFILES/tmux/conf.tmux=$HOME/.tmux.conf
 $DOTFILES/zsh/rc.zsh=$HOME/.zshrc
 $DOTFILES/vim/rc.vim=$HOME/.vimrc
+$DOTFILES/p10k/p10k.zsh=$HOME/.p10k.zsh

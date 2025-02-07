@@ -153,7 +153,7 @@ create_env_file () {
         success "$HOME/.env.sh file already exists, skipping"
     else
         echo "export DOTFILES=$DOTFILES" > $HOME/.env.sh
-        echo "export SOFTWARE_FOLDER=$HOME/Software" > $HOME/.env.sh
+        echo "\nexport SOFTWARE_FOLDER=$HOME/Software" >> $HOME/.env.sh
         success 'created ~/.env.sh'
     fi
 }

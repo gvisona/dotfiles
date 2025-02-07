@@ -1,12 +1,7 @@
 #!/bin/bash
 
-check_if_linux () {
-    if [ $(uname -s)=="Linux" ] 
-    then
-        true
-    else
-        false
-    fi
+check_which_system () {
+    echo "$(uname -s)"
 }
 
 # VARIABLES 
@@ -16,12 +11,14 @@ check_if_linux () {
 # On Linux?
 # curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraMono.tar.xz
 if [ -d "$HOME/Library/Fonts" ]; then
-  if [ ! -d "$HOME/Library/FontsFiraMonoNerdFont-Regular.otf" ]; then
+  if [ ! -d "$HOME/Library/Fonts/FiraMonoNerdFont-Regular.otf" ]; then
     curl -s -L  https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraMono.tar.xz | tar xvz - -C $HOME/Library/Fonts
+  else
+    echo "Fira Mono already downloaded."
   fi
 fi
 
-if [ check_if_linux ]; then
+if [ $(check_which_system) == "Linux" ]; then
   echo "INSTALL FIRA MONO"
   # mkdir -p ~/.fonts
   # mv FiraMono ~./Fonts
@@ -41,14 +38,20 @@ if [ ! -d "$SOFTWARE_FOLDER/fzf" ]; then
 fi
 
 # Install Catpuccin theme for terminal
-if [ check_if_linux ]; then
+if [ $(check_which_system) == "Linux" ]; then
     echo "Installing catpuccin for GNOME terminal"
     curl -L https://raw.githubusercontent.com/catppuccin/gnome-terminal/v1.0.0/install.py | python3 -
+elif [ $(check_which_system) == "Darwin" ]; then
+  if [ ! -d "$SOFTWARE_FOLDER/iterm" ]; then 
+    echo "Downloading catpuccin theme for iTerm. Set it in the preferences."
+    git clone https://github.com/catppuccin/iterm.git $SOFTWARE_FOLDER/
+  fi
 fi
 
 if [ ! -d "$SOFTWARE_FOLDER/powerlevel10k" ]; then
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $SOFTWARE_FOLDER/powerlevel10k
-  echo 'source $SOFTWARE_FOLDER/powerlevel10k/powerlevel10k.zsh-theme' >>~/.env.sh
+  echo '\nsource $SOFTWARE_FOLDER/powerlevel10k/powerlevel10k.zsh-theme' >>~/.env.sh
+  echo '\n\nConfigure p10k with "p10k configure"'
 fi
 
 if [ ! -d "$HOME/.config/tmux/plugins/catppuccin" ]; then
