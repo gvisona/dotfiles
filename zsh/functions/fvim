@@ -1,0 +1,4 @@
+fvim () {
+    FSEARCH=$(fzf -m --preview="bat --color=always {}")
+    nvim "$FSEARCH"
+}

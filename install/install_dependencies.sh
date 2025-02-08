@@ -62,26 +62,30 @@ fi
 # Create vim config directories
 # mkdir -p $HOME/.vim $HOME/.vim/autoload $HOME/.vim/backup $HOME/.vim/colors $HOME/.vim/plugged $HOME/.vim/undodir
 
+if [ ! -d "$HOME/.local/bin/zoxide" ]; then
+  curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+fi
+
+if [ ! -d "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim ]; then
+    git clone https://github.com/nvim-lua/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+fi
+
+# ADDITIONAL THINGS TO INSTALL
+#
+
+if [ $(check_which_system) == "Linux" ]; then
+  echo "Install ripgrep"
+  echo "Install bat 'sudo apt install bat'"
+  echo "Check if bat is installed as batcat and create symlink"
+elif [ $(check_which_system) == "Darwin" ]; then
+  echo "Install ripgrep"
+  echo "Install bat 'brew install bat'"
+fi
 
 
-# TODO: fix vim to neovim
-# # Setup vim-plug from https://github.com/junegunn/vim-plug
-# echo "Setting up vim-plug"
-# if [ ! -d "$HOME/.vim/autoload/plug.vim" ]; then
-#   curl -fLo $HOME/.vim/autoload/plug.vim --create-dirs \
-#     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-# fi
- 
 
-# # Copy selenized theme for vim
-# if [ ! -d "$HOME/.vim/colors/selenized.vim" ]; then
-#   echo "Setting up vim color scheme"
-#   cp ./vim/selenized.vim $HOME/.vim/colors
-# fi
- 
-
-#  # Tmux plugin manager
-# if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
-#   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-# fi
+# Tmux plugin manager
+if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+fi
  

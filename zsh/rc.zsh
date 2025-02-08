@@ -14,12 +14,15 @@ source_if_exists () {
 source_if_exists $HOME/.env.sh
 source_if_exists $DOTFILES/zsh/history.zsh
 source_if_exists $DOTFILES/zsh/git.zsh
-source_if_exists $DOTFILES In general it works great on Linux and pretty much every package is available on both macOS and Linux, but none of the casks are available on Linux./zsh/aliases.zsh
+source_if_exists $DOTFILES/zsh/aliases.zsh
 source_if_exists /usr/local/etc/profile.d/z.sh
 source_if_exists /opt/homebrew/etc/profile.d/z.sh
 
 bindkey "^[[A" history-beginning-search-backward
+bindkey "OA" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
+bindkey "OB" history-beginning-search-forward
+
 
 
 #### PLUGINS
@@ -37,19 +40,21 @@ fi
 source "${ZINIT_HOME}/zinit.zsh"
 
 zinit ice depth=1
+#zinit light zsh-users/zsh-autosuggestions
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light Aloxaf/fzf-tab
-#zinit light zsh-users/zsh-autosuggestions
+# zinit light kutsan/zsh-system-clipboard
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
-# zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-# zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 autoload -Uz compinit && compinit
-
+autoload -Uz fvim
+bindkey -v
 #bindkey '^f' autosuggest-accept
 
 
@@ -61,7 +66,6 @@ autoload -Uz compinit && compinit
 #autoload -U zmv
 #autoload -U promptinit && promptinit
 #autoload -U colors && colors
-#autoload -Uz compinit && compinit
 
 # if test -z ${ZSH_HIGHLIGHT_DIR+x}; then
 # else
@@ -74,7 +78,10 @@ precmd() {
 
 # Source fzf
 source_if_exists ~/.fzf.zsh
-#source <(fzf --zsh)
+source <(fzf --zsh)
+
+eval "$(zoxide init --cmd cd zsh)"
+
 
 
 # export VISUAL=vim
