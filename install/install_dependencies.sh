@@ -56,12 +56,16 @@ if [ ! -d "$SOFTWARE_FOLDER/powerlevel10k" ]; then
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $SOFTWARE_FOLDER/powerlevel10k
   echo '\nsource $SOFTWARE_FOLDER/powerlevel10k/powerlevel10k.zsh-theme' >>~/.env.sh
   echo '\n\nConfigure p10k with "p10k configure"'
+else
+  echo "Powerlevel10k found in software folder"
 fi
 
 if [ ! -d "$HOME/.config/tmux/plugins/catppuccin" ]; then
   mkdir -p ~/.config/tmux/plugins/catppuccin
   git clone -b v2.1.2 https://github.com/catppuccin/tmux.git ~/.config/tmux/plugins/catppuccin/tmux
   echo "\n\nGo fix the window status in ~/.config/tmux/plugins/catppuccin/tmux/catppuccin_options_tmux.conf !! Change the #T to #W\n\n"
+else
+  echo "Catpuccin for tmux already found!"
 fi
 # Create vim config directories
 # mkdir -p $HOME/.vim $HOME/.vim/autoload $HOME/.vim/backup $HOME/.vim/colors $HOME/.vim/plugged $HOME/.vim/undodir
@@ -71,7 +75,7 @@ if [ ! -d "$HOME/.local/bin/zoxide" ]; then
 fi
 
 if [ ! -d "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim ]; then
-    git clone https://github.com/nvim-lua/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+    git clone https://github.com/gvisona/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 fi
 
 # ADDITIONAL THINGS TO INSTALL
@@ -91,7 +95,15 @@ fi
 # Tmux plugin manager
 if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+else
+  "Tmux Plugin Manager already downloaded"
 fi
  
-echo "Install Lazygit!"
-echo "Install Lazydocker!"
+echo "Install Lazygit!" # TODO: fix lazygit installation
+
+if [ ! command -v lazydocker 2>&1 >/dev/null ]; then
+  echo "Installing lazydocker"
+  curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
+else
+  echo "Lazydocker already installed!"
+fi
