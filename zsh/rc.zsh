@@ -55,6 +55,24 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 autoload -Uz compinit && compinit
 autoload -Uz fvim
 bindkey -v
+
+
+# Yank to the system clipboard
+#if [ "$(uname -s)" == "Darwin" ]; then
+#  function vi-yank-xclip {
+#    zle vi-yank
+#    echo "$CUTBUFFER" | pbcopy -i
+#  }
+#elif [ "$(uname -s)" == "Linux" ]; then 
+  function vi-yank-xclip {
+    zle vi-yank
+    echo "$CUTBUFFER" | xclip -i
+  }
+#fi
+zle -N vi-yank-xclip
+bindkey -M vicmd 'y' vi-yank-xclip
+
+
 #bindkey '^f' autosuggest-accept
 
 

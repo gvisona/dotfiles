@@ -10,19 +10,23 @@ check_which_system () {
 # On Mac brew install font-hack-nerd-font
 # On Linux?
 # curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraMono.tar.xz
-if [ -d "$HOME/Library/Fonts" ]; then
-  if [ ! -d "$HOME/Library/Fonts/FiraMonoNerdFont-Regular.otf" ]; then
-    curl -s -L  https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraMono.tar.xz | tar xvz - -C $HOME/Library/Fonts
-  else
-    echo "Fira Mono already downloaded."
-  fi
-fi
+
 
 if [ $(check_which_system) == "Linux" ]; then
-  echo "INSTALL FIRA MONO"
+  echo "Install FiraMono!"
   # mkdir -p ~/.fonts
   # mv FiraMono ~./Fonts
   # fc-cache -fv
+elif [ $(check_which_system) == "Darwin" ]; then
+  if [ -d "$HOME/Library/Fonts" ]; then
+    if [ ! -d "$HOME/Library/Fonts/FiraMonoNerdFont-Regular.otf" ]; then
+      curl -s -L  https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraMono.tar.xz | tar xvz - -C $HOME/Library/Fonts
+    else
+      echo "Fira Mono already downloaded."
+    fi
+  else
+    echo "Install FiraMono!"
+  fi
 fi
 
 # if [ ! -d "$HOME/.local/share/fonts/FiraMono" ]; then
@@ -89,3 +93,5 @@ if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
  
+echo "Install Lazygit!"
+echo "Install Lazydocker!"
