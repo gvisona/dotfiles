@@ -154,7 +154,9 @@ create_env_file () {
     else
         echo "export DOTFILES=$DOTFILES" > $HOME/.env.sh
         echo "\nexport SOFTWARE_FOLDER=$HOME/Software" >> $HOME/.env.sh
+        echo "\nexport FPATH=$FPATH:$DOTFILES/zsh/functions" >> $HOME/.env.sh
         success 'created ~/.env.sh'
+
     fi
 }
 

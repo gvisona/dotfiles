@@ -100,10 +100,11 @@ else
 fi
  
 echo "Install Lazygit!" # TODO: fix lazygit installation
-
-if [ ! command -v lazydocker 2>&1 >/dev/null ]; then
-  echo "Installing lazydocker"
-  curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
-else
-  echo "Lazydocker already installed!"
-fi
+# brew install jesseduffield/lazygit/lazygit
+echo "Install lazydocker!"
+#if [ ! command -v lazydocker 2>&1 >/dev/null ]; then
+#  echo "Installing lazydocker"
+#  curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
+#else
+#  echo "Lazydocker already installed!"
+#fi
