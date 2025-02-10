@@ -22,7 +22,7 @@ bindkey "^[[A" history-beginning-search-backward
 bindkey "OA" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
 bindkey "OB" history-beginning-search-forward
-
+bindkey -v
 
 
 #### PLUGINS
@@ -44,7 +44,7 @@ zinit ice depth=1
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light Aloxaf/fzf-tab
-# zinit light kutsan/zsh-system-clipboard
+zinit light kutsan/zsh-system-clipboard
 
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
@@ -53,25 +53,7 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 autoload -Uz compinit && compinit
-autoload -Uz fvim
-bindkey -v
-
-
-# Yank to the system clipboard
-#if [ "$(uname -s)" == "Darwin" ]; then
-#  function vi-yank-xclip {
-#    zle vi-yank
-#    echo "$CUTBUFFER" | pbcopy -i
-#  }
-#elif [ "$(uname -s)" == "Linux" ]; then 
-  function vi-yank-xclip {
-    zle vi-yank
-    echo "$CUTBUFFER" | xclip -i
-  }
-#fi
-zle -N vi-yank-xclip
-bindkey -M vicmd 'y' vi-yank-xclip
-
+autoload -Uz fzvim
 
 #bindkey '^f' autosuggest-accept
 
@@ -80,6 +62,13 @@ bindkey -M vicmd 'y' vi-yank-xclip
 #     eval "$(direnv hook zsh)"
 # fi
 
+function vi-yank-xclip {
+    zle vi-yank
+   echo "$CUTBUFFER" | xclip -i
+}
+
+zle -N vi-yank-xclip
+bindkey -M vicmd 'y' vi-yank-xclip
 
 #autoload -U zmv
 #autoload -U promptinit && promptinit
