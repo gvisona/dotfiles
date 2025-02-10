@@ -55,20 +55,13 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 autoload -Uz compinit && compinit
 autoload -Uz fzvim
 
+
 #bindkey '^f' autosuggest-accept
 
 
 # if type "direnv" > /dev/null; then
 #     eval "$(direnv hook zsh)"
 # fi
-
-function vi-yank-xclip {
-    zle vi-yank
-   echo "$CUTBUFFER" | xclip -i
-}
-
-zle -N vi-yank-xclip
-bindkey -M vicmd 'y' vi-yank-xclip
 
 #autoload -U zmv
 #autoload -U promptinit && promptinit
