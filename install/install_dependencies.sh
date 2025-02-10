@@ -96,7 +96,7 @@ fi
 if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 else
-  "Tmux Plugin Manager already downloaded"
+  echo "Tmux Plugin Manager already downloaded"
 fi
  
 echo "Install Lazygit!" # TODO: fix lazygit installation
