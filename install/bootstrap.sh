@@ -146,6 +146,14 @@ else
     echo "Directory $HOME/Software already exists."
 fi
 
+if [ ! -d "$HOME/.config" ]; then
+    # Directory does not exist, so create it
+    mkdir "$HOME/.config"
+    echo "Directory $HOME/.config created."
+else
+    echo "Directory $HOME/.config already exists."
+fi
+
 
 
 create_env_file () {
