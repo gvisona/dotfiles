@@ -18,10 +18,10 @@ source_if_exists $DOTFILES/zsh/aliases.zsh
 source_if_exists /usr/local/etc/profile.d/z.sh
 source_if_exists /opt/homebrew/etc/profile.d/z.sh
 
-bindkey "^[[A" history-beginning-search-backward
-bindkey "OA" history-beginning-search-backward
-bindkey "^[[B" history-beginning-search-forward
-bindkey "OB" history-beginning-search-forward
+
+
+
+
 bindkey -v
 
 
@@ -82,6 +82,13 @@ source <(fzf --zsh)
 
 eval "$(zoxide init --cmd cd zsh)"
 
+# Moved bindkeys after plugins
+bindkey "^[[A" history-beginning-search-backward
+bindkey "OA" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
+bindkey "OB" history-beginning-search-forward
+
+
 
 
 # export VISUAL=vim
@@ -91,5 +98,10 @@ eval "$(zoxide init --cmd cd zsh)"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+
+# disable bindkey
+
 # Created by `pipx` on 2025-02-03 22:15:21
 export PATH="$PATH:/home/gvisona/.local/bin"
+
+fpath+=~/.zfunc; autoload -Uz compinit; compinit

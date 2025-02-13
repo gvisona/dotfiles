@@ -1,0 +1,41 @@
+- Substitute in line :s/old/new/g (g for all instances)
+- Substitute betwee line numbers :#,#s/old/new/g
+- Or select in visual mode and use the first command
+- Substitute in whole file :%s/old/new/g
+- using /gc instead of just g will prompt for confirmation
+
+- Display location in file: <Ctrl g>
+- Delete the word on which the cursor is placed: <diw>
+sadm
+- Delete the whole block of words (up to whitespaces) on which the cursor is: <diW>
+
+- Select inside quotes or parentheses: <vi"> <vi(>  <vi{> (also <vib> for round parentheses and <viB> for curly braces)
+- Select Around quotes: <va"> 
+- Select inside tag: <vit>
+
+- Move to previous instance of word under cursor: <#>
+- Move to next instance of word under cursor: <*>
+
+- Reselect last highlighted text: <gv>
+
+- Activate insert mode from visual mode: <I> 
+- Activate append mode from visual mode: <A> 
+
+- Toggle case of character under cursor: <~>
+- Toggle case of selection: <g~ (selection)>
+
+- Indent whole file: <gg=G>
+
+- Jump to closing bracket: <%>
+
+- Open url under cursor: <gx>
+- Open filepath under cursor: <gf>
+
+- Scroll down half page: <Ctrl d>
+- Scroll up half page: <Ctrl u>
+
+- Set a mark for a point in a file: <m (character)>
+- Jump to mark: <' (character)>. If lowercase, will work inside file, if upper case across files.
+
+- Merge line with the following: <J>
+- Merge line with the following (without spaces): <gJ>
