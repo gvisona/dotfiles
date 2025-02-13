@@ -41,3 +41,4 @@ sadm
 - Merge line with the following (without spaces): <gJ>
 
 - Scroll editor up and down with <Ctrl y> and <Ctrl e>
+- Center current line in editor <zz>. Put the cursor line at top of scroll <zt> and at bottom with <zb>
