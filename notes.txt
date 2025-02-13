@@ -45,3 +45,8 @@ sadm
 
 - In visual mode <o> moves the cursor to the  other end of the selection. 
 - In visual block mode, <o> jumps to the other corner of the block, while <O> to the other side
+
+
+- Added <leader>ps for grep across file and <leader>pv to open file navigation
+
+- In visual mode, '>' and  '<' will indent the blocks and keep the selection
