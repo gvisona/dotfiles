@@ -42,3 +42,6 @@ sadm
 
 - Scroll editor up and down with <Ctrl y> and <Ctrl e>
 - Center current line in editor <zz>. Put the cursor line at top of scroll <zt> and at bottom with <zb>
+
+- In visual mode <o> moves the cursor to the  other end of the selection. 
+- In visual block mode, <o> jumps to the other corner of the block, while <O> to the other side
