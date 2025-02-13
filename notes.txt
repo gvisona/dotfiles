@@ -39,3 +39,5 @@ sadm
 
 - Merge line with the following: <J>
 - Merge line with the following (without spaces): <gJ>
+
+- Scroll editor up and down with <Ctrl y> and <Ctrl e>

@@ -153,8 +153,9 @@ create_env_file () {
         success "$HOME/.env.sh file already exists, skipping"
     else
         echo "export DOTFILES=$DOTFILES" > $HOME/.env.sh
-        echo "\nexport SOFTWARE_FOLDER=$HOME/Software" >> $HOME/.env.sh
-        echo "\nexport FPATH=$FPATH:$DOTFILES/zsh/functions" >> $HOME/.env.sh
+        echo '\nexport SOFTWARE_FOLDER=$HOME/Software' >> $HOME/.env.sh
+        echo '\nexport FPATH=$FPATH:$DOTFILES/zsh/functions' >> $HOME/.env.sh
+        echo '\nexport PATH=$PATH:$DOTFILES/scripts' >> $HOME/.env.sh
         success 'created ~/.env.sh'
 
     fi

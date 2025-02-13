@@ -4,16 +4,10 @@ check_which_system () {
     echo "$(uname -s)"
 }
 
-# VARIABLES 
-
-# Install nerd font REWORK
-# On Mac brew install font-hack-nerd-font
-# On Linux?
-# curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraMono.tar.xz
-
-
+# Install a NerdFont (FiraMono)
 if [ $(check_which_system) == "Linux" ]; then
   echo "Install FiraMono!"
+  # curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraMono.tar.xz
   # mkdir -p ~/.fonts
   # mv FiraMono ~./Fonts
   # fc-cache -fv
@@ -67,20 +61,18 @@ if [ ! -d "$HOME/.config/tmux/plugins/catppuccin" ]; then
 else
   echo "Catpuccin for tmux already found!"
 fi
-# Create vim config directories
-# mkdir -p $HOME/.vim $HOME/.vim/autoload $HOME/.vim/backup $HOME/.vim/colors $HOME/.vim/plugged $HOME/.vim/undodir
 
+# Install zoxide navigator
 if [ ! -d "$HOME/.local/bin/zoxide" ]; then
   curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
 fi
 
+# Clone nvim configuration
 if [ ! -d "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim ]; then
     git clone https://github.com/gvisona/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 fi
 
-# ADDITIONAL THINGS TO INSTALL
-#
-
+# Other stuff
 if [ $(check_which_system) == "Linux" ]; then
   echo "Install ripgrep"
   echo "Install bat 'sudo apt install bat'"
@@ -89,7 +81,6 @@ elif [ $(check_which_system) == "Darwin" ]; then
   echo "Install ripgrep"
   echo "Install bat 'brew install bat'"
 fi
-
 
 
 # Tmux plugin manager
@@ -108,3 +99,6 @@ echo "Install lazydocker!"
 #else
 #  echo "Lazydocker already installed!"
 #fi
+
+
+

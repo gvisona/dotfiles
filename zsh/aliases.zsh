@@ -1,4 +1,5 @@
 alias ta='tmux attach -t'
+alias tls='tmux ls'
 alias ls='ls --color'
 alias python='python3'
 alias vim=nvim
