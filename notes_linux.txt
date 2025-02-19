@@ -1,0 +1,17 @@
+# Column command
+
+You can pipe the output of a text file into the "column" command to format it into columnar lists. 
+`cat myfile.txt | column`
+
+-t uses table mode
+-s "<delimiter>" allows the selection of the separator
+-N COL1,COL3,COL3... sets the headers for the table mode.
+-h hides columns
+-J sets the output to json
+-n to name the table?
+
+
+# Find command
+
+
+# jq?

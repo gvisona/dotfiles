@@ -6,7 +6,6 @@
 
 - Display location in file: <Ctrl g>
 - Delete the word on which the cursor is placed: <diw>
-sadm
 - Delete the whole block of words (up to whitespaces) on which the cursor is: <diW>
 
 - Select inside quotes or parentheses: <vi"> <vi(>  <vi{> (also <vib> for round parentheses and <viB> for curly braces)
