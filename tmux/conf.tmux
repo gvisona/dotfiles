@@ -1,5 +1,6 @@
-# set -g default-terminal "screen-256color"
-set -g default-terminal "tmux-256color"
+#set -g default-terminal "screen-256color"
+set-option -a terminal-features 'xterm-256color:RGB'
+# set -g default-terminal "tmux-256color"
 
 set -g prefix C-Space
 unbind C-b
