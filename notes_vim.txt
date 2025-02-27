@@ -1,14 +1,9 @@
-- Substitute in line :s/old/new/g (g for all instances)
 - Substitute betwee line numbers :#,#s/old/new/g
-- Or select in visual mode and use the first command
 - Substitute in whole file :%s/old/new/g
 - using /gc instead of just g will prompt for confirmation
 
 - Display location in file: <Ctrl g>
-- Delete the word on which the cursor is placed: <diw>
-- Delete the whole block of words (up to whitespaces) on which the cursor is: <diW>
 
-- Select inside quotes or parentheses: <vi"> <vi(>  <vi{> (also <vib> for round parentheses and <viB> for curly braces)
 - Select Around quotes: <va"> 
 - Select inside tag: <vit>
 
@@ -30,12 +25,6 @@
 - Open url under cursor: <gx>
 - Open filepath under cursor: <gf>
 
-- Scroll down half page: <Ctrl d>
-- Scroll up half page: <Ctrl u>
-
-- Set a mark for a point in a file: <m (character)>
-- Jump to mark: <' (character)>. If lowercase, will work inside file, if upper case across files.
-
 - Merge line with the following: <J>
 - Merge line with the following (without spaces): <gJ>
 
@@ -45,7 +34,8 @@
 - In visual mode <o> moves the cursor to the  other end of the selection. 
 - In visual block mode, <o> jumps to the other corner of the block, while <O> to the other side
 
-
-- Added <leader>ps for grep across file and <leader>pv to open file navigation
-
 - In visual mode, '>' and  '<' will indent the blocks and keep the selection
+
+- If searching with telescope, <Ctrl q> will add the files in the list to a quicklist. Afterwards
+it is possible to run commands on all those file. e.g. `:cdo s/oldString/newString/gc will find and 
+replace with confirmation within all those files.
