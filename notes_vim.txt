@@ -30,3 +30,13 @@ replace with confirmation within all those files.
 can also adapt to regions outside the cursor (e.g. `vin(` visually selects the content of the next round 
 brackets.)
 Useful selectors are also `t` for tag, `b` for brackets `B` for curly braces, `q` for quote.
+
+- The mini surround plugin uses the keymaps `sa` for surround add, `sd` for surround delete, and `sr`
+for surround replace. These first two characters have to essentially be pressed together.
+surround also allows the use of `b` and `q` like mini ai.
+sa+selector+f is particularly useful to enclose a part of the text in a function call.
+also allows the use of `n` and `l` like ai for external referencing.
+Repeating a selector with repleacement introduces padding: e.g. (text) with `srn((` -> ( text )
+
+
+- FAMILIARIZE WITH mini ai, mini surround and mini operator !!!!!

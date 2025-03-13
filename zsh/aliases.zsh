@@ -7,3 +7,4 @@ alias python='python3'
 alias vim=nvim
 alias grep='grep --color=always'
 alias sz='source ~/.zshrc'
+alias vb='vault-backup'

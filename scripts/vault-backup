@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+git add .
+
+formattedDateTime=$(date +"%Y-%m-%d %H:%M:%S")
+git commit -m "vault backup: $formattedDateTime"
+
+git push
+
