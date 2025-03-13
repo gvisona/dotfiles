@@ -1,11 +1,4 @@
-- Substitute betwee line numbers :#,#s/old/new/g
-- Substitute in whole file :%s/old/new/g
-- using /gc instead of just g will prompt for confirmation
-
 - Display location in file: <Ctrl g>
-
-- Select Around quotes: <va"> 
-- Select inside tag: <vit>
 
 - Move to previous instance of word under cursor: <#>
 - Move to next instance of word under cursor: <*>
@@ -18,15 +11,10 @@
 - Toggle case of character under cursor: <~>
 - Toggle case of selection: <g~ (selection)>
 
-- Indent whole file: <gg=G>
-
 - Jump to closing bracket: <%>
 
 - Open url under cursor: <gx>
 - Open filepath under cursor: <gf>
-
-- Merge line with the following: <J>
-- Merge line with the following (without spaces): <gJ>
 
 - Scroll editor up and down with <Ctrl y> and <Ctrl e>
 - Center current line in editor <zz>. Put the cursor line at top of scroll <zt> and at bottom with <zb>
@@ -34,8 +22,11 @@
 - In visual mode <o> moves the cursor to the  other end of the selection. 
 - In visual block mode, <o> jumps to the other corner of the block, while <O> to the other side
 
-- In visual mode, '>' and  '<' will indent the blocks and keep the selection
-
 - If searching with telescope, <Ctrl q> will add the files in the list to a quicklist. Afterwards
 it is possible to run commands on all those file. e.g. `:cdo s/oldString/newString/gc will find and 
 replace with confirmation within all those files.
+
+- The mini ai plugin enhances the selection around (`a`) and in (`i`) textobjects. The use of `n` and `l`
+can also adapt to regions outside the cursor (e.g. `vin(` visually selects the content of the next round 
+brackets.)
+Useful selectors are also `t` for tag, `b` for brackets `B` for curly braces, `q` for quote.
