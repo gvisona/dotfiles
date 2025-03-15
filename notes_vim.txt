@@ -40,3 +40,6 @@ Repeating a selector with repleacement introduces padding: e.g. (text) with `srn
 
 
 - FAMILIARIZE WITH mini ai, mini surround and mini operator !!!!!
+
+- It is possible to show the source of diagnostic messages by hovering with the cursor and pressing <Ctrl w> and <d>
+This also shows the source of the message if configured.
