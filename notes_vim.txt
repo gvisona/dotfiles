@@ -43,3 +43,30 @@ Repeating a selector with repleacement introduces padding: e.g. (text) with `srn
 
 - It is possible to show the source of diagnostic messages by hovering with the cursor and pressing <Ctrl w> and <d>
 This also shows the source of the message if configured.
+
+
+Completion can be done for:
+
+1. Whole lines						|i_CTRL-X_CTRL-L|
+2. keywords in the current file				|i_CTRL-X_CTRL-N|
+3. keywords in 'dictionary'				|i_CTRL-X_CTRL-K|
+4. keywords in 'thesaurus', thesaurus-style		|i_CTRL-X_CTRL-T|
+5. keywords in the current and included files		|i_CTRL-X_CTRL-I|
+6. tags							|i_CTRL-X_CTRL-]|
+7. file names						|i_CTRL-X_CTRL-F|
+8. definitions or macros				|i_CTRL-X_CTRL-D|
+9. Vim command-line					|i_CTRL-X_CTRL-V|
+10. User defined completion				|i_CTRL-X_CTRL-U|
+11. omni completion					|i_CTRL-X_CTRL-O|
+12. Spelling suggestions				|i_CTRL-X_s|
+13. keywords in 'complete'				|i_CTRL-N| |i_CTRL-P|
+
+Additionally, |i_CTRL-X_CTRL-Z| stops completion without changing the text.
+
+All these, except CTRL-N and CTRL-P, are done in CTRL-X mode.  This is a
+sub-mode of Insert and Replace modes.  You enter CTRL-X mode by typing CTRL-X
+and one of the CTRL-X commands.  You exit CTRL-X mode by typing a key that is
+not a valid CTRL-X mode command.  Valid keys are the CTRL-X command itself,
+CTRL-N (next), and CTRL-P (previous).
+
+
