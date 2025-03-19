@@ -93,6 +93,7 @@ fi
 echo "Install Lazygit!" # TODO: fix lazygit installation
 # brew install jesseduffield/lazygit/lazygit
 echo "Install lazydocker!"
+echo "Install taskwarrior!"
 #if [ ! command -v lazydocker 2>&1 >/dev/null ]; then
 #  echo "Installing lazydocker"
 #  curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
