@@ -11,15 +11,11 @@
 - Toggle case of character under cursor: <~>
 - Toggle case of selection: <g~ (selection)>
 
-- Jump to closing bracket: <%>
-
 - Open url under cursor: <gx>
-- Open filepath under cursor: <gf>
 
 - Scroll editor up and down with <Ctrl y> and <Ctrl e>
 - Center current line in editor <zz>. Put the cursor line at top of scroll <zt> and at bottom with <zb>
 
-- In visual mode <o> moves the cursor to the  other end of the selection. 
 - In visual block mode, <o> jumps to the other corner of the block, while <O> to the other side
 
 - If searching with telescope, <Ctrl q> will add the files in the list to a quicklist. Afterwards
@@ -69,4 +65,9 @@ and one of the CTRL-X commands.  You exit CTRL-X mode by typing a key that is
 not a valid CTRL-X mode command.  Valid keys are the CTRL-X command itself,
 CTRL-N (next), and CTRL-P (previous).
 
+
+- You can check the keymaps set in vim, use ':nmap' in normal mode. This gives all the mappings for
+normal mode. You can also filter, for example using ':nmap <leader>'.
+- Using ':verbose nmap <leader>' shows where the keymaps were last set, while ':Telescope keymaps'
+brings up the list in a telescope window.
 
