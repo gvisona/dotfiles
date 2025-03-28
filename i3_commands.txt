@@ -1,0 +1,41 @@
+# Opening a terminal
+$mod + Enter - Open a new terminal
+
+# Windows
+$mod + h - focus left    | $mod + Shift + h - move window left
+$mod + j - focus down    | $mod + Shift + j - move window down
+$mod + k - focus up      | $mod + Shift + k - move window up
+$mod + l - focus right   | $mod + Shift + l - move window right
+$mod + a - focus parent
+$mod + Space - toggle focus mode??
+
+# Modifying windows
+$mod + f - toggle fullscreen
+$mod + ; - split window horizontally 
+$mod + ; - split window vertically 
+$mod + r - resize mode 
+
+# Changing layout
+$mod + e - default
+$mod + s - stacked
+$mod + w - tabbed
+
+# Floating
+$mod + Shift + Space - toggle floating
+$mod + Click - drag floating
+
+# Workspaces
+$mod + 0-9 - change workspace
+$mod + Shift + 0-9 - move window to workspace
+
+# Applications
+$mod + d - open dmenu
+$mod + Shift + q - close window
+
+# Restart and exit
+$mod + Shift + c - reload i3 config
+$mod + Shift + r - restart i3 in place
+$mod + Delete - open system shutdown menu
+$mod + Shift + y - lock screen
+
+

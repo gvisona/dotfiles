@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+bat $DOTFILES/i3_commands.txt
