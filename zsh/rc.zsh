@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 source_if_exists () {
     if test -r "$1"; then
         source "$1"
@@ -56,21 +49,6 @@ autoload -Uz compinit && compinit
 autoload -Uz fzvim
 
 
-#bindkey '^f' autosuggest-accept
-
-
-# if type "direnv" > /dev/null; then
-#     eval "$(direnv hook zsh)"
-# fi
-
-#autoload -U zmv
-#autoload -U promptinit && promptinit
-#autoload -U colors && colors
-
-# if test -z ${ZSH_HIGHLIGHT_DIR+x}; then
-# else
-#     source $ZSH_HIGHLIGHT_DIR/zsh-syntax-highlighting.zsh
-# fi
 
 precmd() {
     source $DOTFILES/zsh/aliases.zsh
@@ -89,14 +67,7 @@ bindkey "^[[B" history-beginning-search-forward
 bindkey "OB" history-beginning-search-forward
 
 
-
-
-# export VISUAL=vim
-# export EDITOR=vim
-# export PATH="$PATH:/usr/local/sbin:$DOTFILES/bin:$HOME/.local/bin:$DOTFILES/scripts/"
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+eval "$(oh-my-posh init zsh --config $DOTFILES/zsh/powerlevel10k_lean.omp.json)"
 
 
 # disable bindkey
@@ -109,3 +80,5 @@ fpath+=~/.zfunc; autoload -Uz compinit; compinit
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
