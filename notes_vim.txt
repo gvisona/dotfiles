@@ -1,20 +1,13 @@
 - Display location in file: <Ctrl g>
 
-- Move to previous instance of word under cursor: <#>
-- Move to next instance of word under cursor: <*>
-
-- Reselect last highlighted text: <gv>
-
 - Activate insert mode from visual mode: <I> 
 - Activate append mode from visual mode: <A> 
 
-- Toggle case of character under cursor: <~>
 - Toggle case of selection: <g~ (selection)>
 
 - Open url under cursor: <gx>
 
 - Scroll editor up and down with <Ctrl y> and <Ctrl e>
-- Center current line in editor <zz>. Put the cursor line at top of scroll <zt> and at bottom with <zb>
 
 - In visual block mode, <o> jumps to the other corner of the block, while <O> to the other side
 
