@@ -11,6 +11,13 @@
           "style": "plain",
           "template": " {{ .CurrentDate | date .Format }} ",
           "type": "time"
+        },
+        {
+          "type": "python",
+          "style": "plain",
+          "foreground": "#906cff",
+          "template": "  {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }}",
+          "home_enabled": true
         }
       ],
       "type": "rprompt"
